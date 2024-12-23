@@ -1,0 +1,112 @@
+{% extends "index.html" %} {% block content %}
+<!-- <div class="bg-gradient-to-r from-blue-500 to-purple-600 p-4">
+  <div class="container mx-auto flex justify-between items-center">
+    <a href="#" class="text-white text-lg font-bold">Webknot</a>
+    <div>
+      <a href="#" class="text-white hover:underline mx-2">Home</a>
+      <a href="#" class="text-white hover:underline mx-2">About</a>
+      <a href="#" class="text-white hover:underline mx-2">Contact</a>
+    </div>
+  </div>
+</div> -->
+
+<div class="py-16">
+  <form method="POST">
+    {% csrf_token %}
+    <div
+      class="flex bg-white rounded-lg shadow-lg overflow-hidden mx-auto max-w-sm lg:max-w-4xl"
+    >
+      <div
+        class="hidden lg:block lg:w-1/2 bg-cover"
+        style="
+          background-image: url('https://cdn.prod.website-files.com/64e5baa2187bf4d05912b65d/64e5bd502e8d1b07d195a26f_wwwew.svg');
+          background-size: contain; /* or use a percentage like '50%' */
+          background-position: center;
+          background-repeat: no-repeat; /* Prevents the image from repeating */
+        "
+      ></div>
+      <div class="w-full p-8 lg:w-1/2">
+        <h2 class="text-3xl font-bold text-gray-800 text-center mb-4">
+          Welcome
+        </h2>
+        <p class="text-xl text-gray-600 text-center mb-4">Webknot Team!</p>
+        <p class="text-lg text-gray-600 text-center mb-8">
+          Created By
+          <a
+            href="https://drive.google.com/file/d/1BmSH4T1AIgnuufI4ZsxqL0jgzo5ICcCc/view"
+            class="text-red-500 font-bold hover:underline"
+            >Sachin Singh</a
+          >
+        </p>
+
+        <!-- Username field -->
+        <div class="mt-4">
+          <label
+            for="username"
+            class="block text-gray-700 text-sm font-bold mb-2"
+            >Username</label
+          >
+          <input
+            id="username"
+            class="bg-gray-200 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none border border-gray-300 rounded py-2 px-4 block w-full"
+            type="text"
+            name="Username"
+            aria-label="Username"
+            required
+          />
+          {% if form.username.errors %}
+          <div class="text-red-500 text-xs mt-1">
+            {% for error in form.username.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Password field -->
+        <div class="mt-4">
+          <div class="flex justify-between">
+            <label
+              for="password"
+              class="block text-gray-700 text-sm font-bold mb-2"
+              >Password</label
+            >
+            <a
+              href="#"
+              class="text-xs text-gray-500 hover:text-blue-500"
+              onclick="alert('Forgot Password feature will be implemented in the future!')"
+              >Forget Password?</a
+            >
+          </div>
+          <input
+            id="password"
+            class="bg-gray-200 text-gray-700 focus:ring-2 focus:ring-blue-500 focus:outline-none border border-gray-300 rounded py-2 px-4 block w-full"
+            type="password"
+            name="Password"
+            aria-label="Password"
+            required
+          />
+          {% if form.password.errors %}
+          <div class="text-red-500 text-xs mt-1">
+            {% for error in form.password.errors %}
+            <p>{{ error }}</p>
+            {% endfor %}
+          </div>
+          {% endif %}
+        </div>
+
+        <!-- Submit button -->
+        <div class="mt-8">
+          <button
+            class="bg-blue-600 text-white font-semibold py-2 px-4 w-full rounded hover:bg-blue-500 transition duration-300 ease-in-out"
+            type="submit"
+            aria-label="Login"
+          >
+            Login
+          </button>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}
