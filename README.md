@@ -140,5 +140,4 @@ Visit `http://127.0.0.1:8000` in your web browser to view the application.
 
 ---
 
-## Made by Anmol Shubham (Acharya Institute of Technology)
-## portfolio:- https://anmol-portfolio-sigma.vercel.app/
+## Made by Sachin Singh (Acharya Institute of Technology)
